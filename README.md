@@ -14,24 +14,16 @@ This extension addresses this issue by leveraging [Alfaaz](https://github.com/th
 
 Compared to the original extension, this extension introduces one single change:
 
-```ts
-// Original extension
-this.storage.words = options => {
-    const node = options?.node || this.editor.state.doc
-    const text = node.textBetween(0, node.content.size, ' ', ' ')
-    const words = text.split(' ').filter(word => word !== '')
-
-    return words.length
-}
-
-// This extension
-import { countWords } from 'alfaaz'
+```diff
++ import { countWords } from 'alfaaz'
 
 this.storage.words = options => {
     const node = options?.node || this.editor.state.doc
     const text = node.textBetween(0, node.content.size, ' ', ' ')
+-   const words = text.split(' ').filter(word => word !== '')
 
-    return countWords(text)
+-   return words.length
++   return countWords(text)
 }
 ```
 
