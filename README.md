@@ -1,4 +1,5 @@
 # tiptap-word-count-multilingual
+[![npm version](https://badge.fury.io/js/tiptap-word-count-multilingual.svg)](https://badge.fury.io/js/tiptap-word-count-multilingual)
 
 ## Background
 
