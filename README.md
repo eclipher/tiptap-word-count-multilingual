@@ -1,3 +1,21 @@
+## Deprecation Notice
+[Tiptap v2.8.0](https://github.com/ueberdosis/tiptap/releases/tag/v2.8.0) introduces the ability to customize the counter function of the official `CharacterCount` extension, making this customized extension obsolete. You can achieve the same functionality like this:
+```ts
+import CharacterCount from "@tiptap/extension-character-count";
+import { countWords } from "alfaaz";
+
+const editor = new Editor ({
+    extensions: [
+        Document,
+        Paragraph,
+        Text,
+        CharacterCount.configure({
+            wordCounter: (text) => countWords(text),
+        }),
+    ]
+})
+```
+
 # tiptap-word-count-multilingual
 [![npm version](https://badge.fury.io/js/tiptap-word-count-multilingual.svg)](https://badge.fury.io/js/tiptap-word-count-multilingual)
 
